@@ -423,7 +423,7 @@ class read_buffer:
         self.last_prefetch_cycle = int(max(response_cycles_arr))
 
         # Update the trace matrix
-        self.trace_matrix = np.column_stack((response_cycles_arr, prefetch_requests))
+        # self.trace_matrix = np.column_stack((response_cycles_arr, prefetch_requests))
         self.trace_valid = True
 
         # Set active buffer contents
@@ -519,7 +519,7 @@ class read_buffer:
         #       'The request and response cycles dims do not match'
 
         this_prefetch_trace = np.column_stack((response_cycles_arr, prefetch_requests))
-        self.trace_matrix = np.concatenate((self.trace_matrix, this_prefetch_trace), axis=0)
+        # self.trace_matrix = np.concatenate((self.trace_matrix, this_prefetch_trace), axis=0)
 
         # Set the line to be prefetched next
         if requested_data_size > self.active_buf_size:
